@@ -74,6 +74,92 @@ function q7(){
         }
     }
 }
+function q8(a, b) {
+    if (b === 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+} 
+function q9(a,b){
+            console.log(a*b/q8(a,b));
+}
+function q10(num) {
+    let sum = 0;
+    let temp = num;
+    const digits = num.toString().length;
+    while (temp > 0) {
+        let digit = temp % 10;
+        sum += Math.pow(digit, digits);
+        temp = Math.floor(temp / 10);
+    }
+    return sum === num;
+}
+function q12(arr){
+            return [...new Set(arr)];
+}
+function q11(str) {
+    let vowelsCount = 0;
+    let consonantsCount = 0;
+    const vowels = 'aeiouAEIOU';
+
+    for (let char of str) {
+        if (/[a-zA-Z]/.test(char)) {  
+            if (vowels.includes(char)) {
+                vowelsCount++;
+            } else {
+                consonantsCount++;
+            }
+        }
+    }
+
+    return { vowels: vowelsCount, consonants: consonantsCount };
+}  
+function q13(arr) {
+    let uniqueArr = [...new Set(arr)];
+    if (uniqueArr.length < 2) {
+        return "Array must have at least two unique numbers.";
+    }
+
+    uniqueArr.sort((a, b) => a - b); 
+
+    return {
+        secondSmallest: uniqueArr[1],
+        secondLargest: uniqueArr[uniqueArr.length - 2]
+    };
+}
+function q14(sentence) {
+    const alphabetSet = new Set();
+    for (let char of sentence.toLowerCase()) {
+        if (char >= 'a' && char <= 'z') {
+            alphabetSet.add(char);
+        }
+    }
+    return alphabetSet.size === 26; 
+}
+function q15(arr){
+            let n=arr.length+1;
+            let actualSum = arr.reduce((sum, num) => sum + num, 0);
+            let expectedSum = (n * (n + 1)) / 2;
+    return expectedSum - actualSum;
+}
+function q16(arr) {
+    let n = arr.length;
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < n - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                swapped = true;
+            }
+        }
+        n--; 
+    } while (swapped);
+    return arr;
+}
+function q17(n) {
+    return n.toString(2);
+}
 function q19(){
     let a=prompt("Enter the sentence:");
     let l=0;
