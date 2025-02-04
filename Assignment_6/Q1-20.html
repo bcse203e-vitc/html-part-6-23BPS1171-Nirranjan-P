@@ -1,0 +1,122 @@
+function q1(){
+    let num1=10,num2=20;
+    num1+=num2;
+    num2=num1-num2;
+    num1-=num2;
+    console.log(num1,num2);
+}
+function q2(){
+    let a=prompt("Enter first number");
+    let b=prompt("Enter second number");
+    let c=prompt("Enter third number");
+    let largest=a;
+    if (b>a){
+        largest=b;
+    }
+    if(c>a){
+        largest=c;
+    }
+    console.log(largest);
+}
+function q3(){
+    let a=prompt("Enter the number:");
+    if(a%2==0){
+        console.log('Even');
+    }
+    else{
+        console.log('Odd');
+    }
+}
+function q4(){
+    let a=prompt("Enter the number:");
+    let b=0;
+    while(a>0){
+        let digit=a%10;
+        a=Math.floor(a/10);
+        b=b*10+digit;
+    }
+    console.log(b);
+}
+function q5(){
+    let a=prompt("Enter the number:");
+    let b=0;
+    while(a>0){
+        b++;
+        a=Math.floor(a/10);
+    }
+    console.log(b);
+}
+function q6(){
+    let c=prompt("Enter the number:");
+    let f=(c*9/5)+32;
+    console.log(f);
+}
+function q7(){
+    let n=prompt("Enter the number of terms:");
+    let f=0;
+    let l=1;
+    if (n<1){
+        console.log('invalid input');
+    }
+    else if (n==1){
+        console.log(0);
+    }
+    else if (n==2){
+        console.log('0 1');
+    }
+    else{
+        console.log('0 1');
+        for (let i=0;i<n-2;i++){
+            let a=f+l;
+            f=l;
+            l=a;
+            console.log(l);
+        }
+    }
+}
+function q19(){
+    let a=prompt("Enter the sentence:");
+    let l=0;
+    let ls;
+    const arr=a.split(" ");
+    for (let i=0;i<arr.length;i++){
+        if(arr[i].length>l){
+            l=arr[i].length;
+            ls=arr[i];
+        }
+    }
+    console.log(ls);
+}
+function q20(){
+    let a=prompt("Enter the string:");
+    const freq=new Map();
+    for (let i=0;i<a.length;i++){
+        let ch=a[i];
+        if (freq.has(ch)){
+            freq.set(ch,freq.get(ch)+1);
+        }
+        else{
+            freq.set(ch,1);
+        }
+    }
+    console.log(freq);
+}
+function q18(){
+    let a=prompt("Enter the string:");
+    const freq=new Map();
+    for (let i=0;i<a.length;i++){
+        let ch=a[i];
+        if (freq.has(ch)){
+            freq.set(ch,freq.get(ch)+1);
+        }
+        else{
+            freq.set(ch,1);
+        }
+    }
+    for(let [key, value] of freq){
+        if(value==1){
+            console.log(key);
+            break;
+        }
+    }
+}
